@@ -59,7 +59,6 @@ namespace GestaoDeEquipamentos.ConsoleApp.ModuloFabricante
             string telefone = Console.ReadLine()!;
 
             Fabricante novoFabricante = new Fabricante(nome, email, telefone);
-            novoFabricante.Id = GeradorIds.GerarIdFabricante();
 
             repositorioFabricante.CadastrarFabricante(novoFabricante);
         }

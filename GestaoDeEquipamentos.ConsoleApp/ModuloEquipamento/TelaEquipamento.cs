@@ -33,7 +33,7 @@ public class TelaEquipamento
         Console.WriteLine("--------------------------------------------");
 
         Console.Write("Digite um opção válida: ");
-        char opcaoEscolhida = Console.ReadLine()[0];
+        char opcaoEscolhida = Convert.ToChar(Console.ReadLine());
 
         return opcaoEscolhida;
     }
@@ -50,9 +50,7 @@ public class TelaEquipamento
 
         Console.WriteLine();
 
-        int contadorFabricantes = 0;
-
-        contadorFabricantes = repositorioFabricante.contadorFabricantes;
+        int contadorFabricantes = repositorioFabricante.SelecionarFabricantes().Length;
 
         if (contadorFabricantes == 0)
         {
