@@ -18,8 +18,7 @@ O sistema também possui validações para garantir que os dados inseridos sejam vá
  3. Valor de aquisição do equipamento.
  4. Data de fabricação do equipamento.
  5.  O Sietam gera automaticamente um numero de ID para cada equipamento cadastrado, e um numero de serié baseando-se 
- nas três primeiras letras do nome do equipamento e o seu ID gerado.
-
+ nas três primeiras letras do nome do equipamento e o seu ID gerado
 
 - Cadastro de  chamadas de manutenção de equipamentos tendo como entradas:
  
@@ -27,23 +26,38 @@ O sistema também possui validações para garantir que os dados inseridos sejam vá
  2. Descrição da chamada.
  3. Data de abertura da chamada.
  4. Quantidade de dias de chamada em aberto.
+	
+- Cadastro de fabricantes tendo como entradas:
 
+ 1. Nome do fabricante.
+ 2. Telefone do fabricante.
+ 3. E-mail do fabricante.
+	
+ --------------------------------------------------------------------------------------------------------
 
-
-- Acesso de Menus:
+ ## Acesso de Menus:
 
 1. **Menu principal:**
- a. Cadastro de equipamentos.
- b. Editar equipamento cadastrado.
- c. Visualizar equipamentos cadastrados.
- d. Excluir equipamentos cadastrados.
- e. Menu de manutenção.
+ 1. Controle de fabricantes.
+ 2. Controle de equipamentos.
+ 3. Controle de chamadas.
+ 4. Sair.
 
-2. **Menu de manutenção:**	
- a. Criar chamadas de manutenção. 
- b. Editar chamadas cadastrados.
- c. Visualizar chamadas cadastradas.
- d. Excluir chamadas cadastradas.
+ --------------------------------------------------------------------------------------------------------
+	 
+2. **Menu de Chamadas:**	
+ 1. Criar chamadas. 
+ 2. Editar chamadas.
+ 3. Visualizar chamadas.
+ 4. Excluir chamadas.
+ 
+ --------------------------------------------------------------------------------------------------------
+	
+ 3. **Menu de fabricantes**
+ 1. Nome do fabricante.
+ 2. Telefone do fabricante.
+ 3. E-mail do fabricante.
+ 4. Endereço do fabricante.
  
 # Como ultilizar:
 
@@ -62,7 +76,7 @@ dotnet restore
 ```
 5.Para executar o projeto compilando em tempo real
 ```
-dotnet run --project RoboTupiniquim2025.ConsoleApp
+dotnet run --project GestaoDeEquipamentos.ConsoleApp
 ```
 
 6. Para executar o arquivo compilado, navegue até a pasta /GestaoDeEquipamentos.ConsoleApp/bin/Release/net8.0/ e execute o arquivo:
