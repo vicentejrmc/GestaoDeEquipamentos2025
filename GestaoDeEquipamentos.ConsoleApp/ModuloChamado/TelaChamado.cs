@@ -1,18 +1,30 @@
 ﻿
+using GestaoDeEquipamentos.ConsoleApp.Compartilhado;
 using GestaoDeEquipamentos.ConsoleApp.ModuloEquipamento;
 
 namespace GestaoDeEquipamentos.ConsoleApp.ModuloChamado;
 
 public class TelaChamado
 {
-    public RepositorioEquipamento repositorioEquipamento;
     public RepositorioChamado repositorioChamado;
+    public RepositorioEquipamento repositorioEquipamento;
 
-    public TelaChamado(RepositorioEquipamento repositorioEquipamento)
+    public TelaChamado(RepositorioChamado repositorioChamado, RepositorioEquipamento repositorioEquipamento)
     {
+        this.repositorioChamado = repositorioChamado;
         this.repositorioEquipamento = repositorioEquipamento;
-        repositorioChamado = new RepositorioChamado();
     }
+
+    public void ExibirCabecalho()
+    {
+        Console.Clear();
+        Console.WriteLine("--------------------------------------------");
+        Console.WriteLine("Controle de Chamados");
+        Console.WriteLine("--------------------------------------------\n");
+
+        Console.WriteLine();
+    }
+
 
     public char ApresentarMenu()
     {
@@ -24,7 +36,6 @@ public class TelaChamado
         Console.WriteLine("2 - Editar Chamado");
         Console.WriteLine("3 - Excluir Chamado");
         Console.WriteLine("4 - Visualizar Chamados");
-
         Console.WriteLine("S - Voltar");
 
         Console.WriteLine();
@@ -42,12 +53,11 @@ public class TelaChamado
         Console.WriteLine("Cadastrando Chamado...");
         Console.WriteLine("--------------------------------------------");
 
-        Chamado novoChamado =  ObterDadosChamado();
+        Chamado novoChamado = ObterDadosChamado();
 
         repositorioChamado.CadastrarChamado(novoChamado);
 
-        Console.WriteLine();
-        Console.WriteLine("O chamado foi cadastrado com sucesso!");
+        Notificador.ExibirMensagem("Registro concluído com sucesso!", ConsoleColor.Green);
     }
 
     public void EditarChamado()
@@ -68,12 +78,11 @@ public class TelaChamado
 
         if (!conseguiuEditar)
         {
-            Console.WriteLine("Houve um erro durante a edição de um registro...");
+            Notificador.ExibirMensagem("Houve um erro ao editar o registro!", ConsoleColor.Red);
             return;
         }
 
-        Console.WriteLine();
-        Console.WriteLine("O chamado foi editado com sucesso!");
+        Notificador.ExibirMensagem("O chamado foi editado com sucesso!", ConsoleColor.Green);
     }
 
     public void ExcluirChamado()
@@ -92,12 +101,11 @@ public class TelaChamado
 
         if (!conseguiuExcluir)
         {
-            Console.WriteLine("Houve um erro durante a exclusão de um registro...");
+            Notificador.ExibirMensagem("Houve um erro durante a exclusão do registro!", ConsoleColor.Red);
             return;
         }
 
-        Console.WriteLine();
-        Console.WriteLine("O chamado foi excluído com sucesso!");
+        Notificador.ExibirMensagem("O chamado foi excluído com sucesso!", ConsoleColor.Green);
     }
 
     public void VisualizarChamados(bool exibirTitulo)
@@ -121,23 +129,29 @@ public class TelaChamado
 
         for (int i = 0; i < chamadosCadastrados.Length; i++)
         {
-            Chamado c = chamadosCadastrados[i];
+            Chamado chamado = chamadosCadastrados[i];
 
-            if (c == null)
+            if (chamado == null)
                 continue;
 
-            string tempoDecorrido = $"{c.ObterTempoDecorrido()} dia(s)";
+            string tempoDecorrido = $"{chamado.ObterTempoDecorrido()} dia(s)";
 
             Console.WriteLine(
                 "{0, -6} | {1, -12} | {2, -15} | {3, -30} | {4, -15} | {5, -15}",
-                c.Id, c.DataAbertura.ToShortDateString(), c.Titulo, c.Descricao, c.Equipamento.Nome, tempoDecorrido
+                chamado.Id, chamado.DataAbertura.ToShortDateString(),
+                chamado.Titulo, chamado.Descricao, chamado.Equipamento.Nome, tempoDecorrido
             );
         }
 
+        Console.WriteLine();
+
+        Notificador.ExibirMensagem("Pressione ENTER para continuar...", ConsoleColor.DarkGray);
     }
 
     public void VisualizarEquipamentos()
     {
+        ExibirCabecalho();
+
         Console.WriteLine("Visualizando Equipamentos...");
         Console.WriteLine("--------------------------------------------");
 
@@ -161,16 +175,6 @@ public class TelaChamado
                 e.Id, e.Nome, e.ObterNumeroSerie(), e.Fabricante, e.PrecoAquisicao.ToString("C2"), e.DataFabricacao.ToShortDateString()
             );
         }
-
-        Console.WriteLine();
-    }
-
-    public void ExibirCabecalho()
-    {
-        Console.Clear();
-        Console.WriteLine("--------------------------------------------");
-        Console.WriteLine("Controle de Chamados");
-        Console.WriteLine("--------------------------------------------");
 
         Console.WriteLine();
     }

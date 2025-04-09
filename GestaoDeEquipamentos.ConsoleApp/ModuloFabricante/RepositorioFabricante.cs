@@ -11,7 +11,6 @@ public class RepositorioFabricante
     public Fabricante[] fabricantes = new Fabricante[100];
     public int contadorFabricantes = 0;
 
-
     public void CadastrarFabricante(Fabricante novoFabricante)
     {
         novoFabricante.Id = GeradorIds.GerarIdFabricante();
@@ -24,6 +23,7 @@ public class RepositorioFabricante
         for (int i = 0; i < fabricantes.Length; i++)
         {
             if (fabricantes[i] == null) continue;
+
             else if (fabricantes[i].Id == idFabricante)
             {
                 fabricantes[i] = null;
@@ -32,8 +32,7 @@ public class RepositorioFabricante
         }
         return false;
     }
-
-   
+ 
     public bool EditarFabricante(int idFabricante, Fabricante fabricanteEditado)
     {
         for (int i = 0; i < fabricantes.Length; i++)
@@ -49,7 +48,6 @@ public class RepositorioFabricante
                 return true;
             }
         }
-
         return false;
     }
 
@@ -62,10 +60,12 @@ public class RepositorioFabricante
     {
         for (int i = 0; i < fabricantes.Length; i++)
         {
-            if (fabricantes[i] == null) continue;
+            Fabricante fab = fabricantes[i];
 
-            else if (fabricantes[i].Id == idFabricante)
-                return fabricantes[i];
+            if (fab == null) continue;
+
+            else if (fab.Id == idFabricante)
+                return fab;
         }
         return null;
     }
