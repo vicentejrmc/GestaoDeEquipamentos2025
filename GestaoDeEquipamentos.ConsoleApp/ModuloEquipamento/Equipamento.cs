@@ -24,4 +24,26 @@ public class Equipamento
         
         return $"{tresPrimeirosCaracteres}-{Id}";
     }
+
+    public string Validar()
+    {
+        string erros = "";
+
+        if (Fabricante == null)
+            erros += "O campo Fabricante é obrigatório.\n";
+
+        if (string.IsNullOrWhiteSpace(Nome))
+            erros += "O campo Nome é obrigatório.\n";
+
+        if (Nome.Length < 3)
+            erros += "O campo Nome deve ter no mínimo 3 caracteres.\n";
+
+        if (PrecoAquisicao <= 0)
+            erros += "O campo Preço de Aquisição deve ser maior que zero.\n";
+
+        if (DataFabricacao == DateTime.MinValue)
+            erros += "O campo Data de Fabricação é obrigatório.\n";
+
+        return erros;
+    }
 }

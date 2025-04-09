@@ -50,6 +50,17 @@ public class TelaEquipamento
 
         Equipamento novoEquipamento = ObterDadosEquipamento();
 
+        string erros = novoEquipamento.Validar();
+
+        if (erros.Length > 0)
+        {
+            Notificador.ExibirMensagem(erros, ConsoleColor.Red);
+
+            CadastrarEquipamento(); 
+
+            return;
+        }
+
         Fabricante fabricante = novoEquipamento.Fabricante;
 
         fabricante.AdicionarEquipamento(novoEquipamento);
