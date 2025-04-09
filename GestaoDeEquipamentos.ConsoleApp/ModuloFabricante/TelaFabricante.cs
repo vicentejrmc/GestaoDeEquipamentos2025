@@ -46,6 +46,14 @@ namespace GestaoDeEquipamentos.ConsoleApp.ModuloFabricante
 
             Fabricante novoFabricante = ObterDadosFabricante();
 
+            string erros = novoFabricante.Validar();
+
+            if(erros.Length > 0)
+            {
+                Notificador.ExibirMensagem(erros, ConsoleColor.Red);
+                return;
+            }
+
             repositorioFabricante.CadastrarFabricante(novoFabricante);
 
             Notificador.ExibirMensagem("Registro concluido com Sucesso!", ConsoleColor.Green);
