@@ -51,6 +51,9 @@ namespace GestaoDeEquipamentos.ConsoleApp.ModuloFabricante
             if(erros.Length > 0)
             {
                 Notificador.ExibirMensagem(erros, ConsoleColor.Red);
+
+                CadastrarFabricante(); // Recursão Retornao ao meetodo novamente(recursividade)
+                                       // quanto um metodo chama ele mesmo para retornoar como Loop dentro de uma condição
                 return;
             }
 
