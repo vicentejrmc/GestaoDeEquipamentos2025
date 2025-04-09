@@ -1,5 +1,6 @@
 ﻿using GestaoDeEquipamentos.ConsoleApp.ModuloFabricante;
 using GestaoDeEquipamentos.ConsoleApp.Compartilhado;
+using System.ComponentModel.Design;
 
 namespace GestaoDeEquipamentos.ConsoleApp.ModuloEquipamento;
 
@@ -173,7 +174,10 @@ public class TelaEquipamento
         decimal precoAquisicao = Convert.ToDecimal(Console.ReadLine());
 
         Console.Write("Digite a data de fabricação do equipamento (dd/MM/yyyy) ");
-        DateTime dataFabricacao = Convert.ToDateTime(Console.ReadLine());
+        string dataFabString = Console.ReadLine();
+
+        ValidarDataFabricacao(Convert.ToDateTime(dataFabString));
+        DateTime dataFabricacao = Convert.ToDateTime(dataFabString);
 
         VisualizarFabricantes();
 
@@ -185,6 +189,24 @@ public class TelaEquipamento
         Equipamento equipamento = new Equipamento(nome, precoAquisicao, dataFabricacao, fabricanteSelecionado);
 
         return equipamento;
+    }
+
+    public DateTime ValidarDataFabricacao( DateTime data)
+    {
+        DateTime dataFabricacao = Convert.ToDateTime(Console.ReadLine());
+
+        int erros = 0;
+
+        if (data == DateTime.MinValue)
+            Console.WriteLine("O campo Data de Fabricação é obrigatório.\n"); erros++;
+
+        if (data > DateTime.Now)
+            Console.WriteLine("A data de fabricação não pode ser maior que a data atual.\n"); erros++;
+
+        if (erros > 0)
+        ObterDadosEquipamento();
+
+        return data;
     }
 
     private void VisualizarFabricantes()

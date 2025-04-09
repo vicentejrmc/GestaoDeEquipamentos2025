@@ -44,6 +44,11 @@ public class Equipamento
         if (DataFabricacao == DateTime.MinValue)
             erros += "O campo Data de Fabricação é obrigatório.\n";
 
+        if (DataFabricacao > DateTime.Now)
+            erros += "A data de fabricação não pode ser maior que a data atual.\n";
+
+
         return erros;
     }
+
 }

@@ -55,6 +55,17 @@ public class TelaChamado
 
         Chamado novoChamado = ObterDadosChamado();
 
+        string erros = novoChamado.Validar();
+
+        if (erros.Length > 0)
+        {
+            Notificador.ExibirMensagem(erros, ConsoleColor.Red);
+
+            CadastrarChamado(); // Recursão
+
+            return;
+        }
+
         repositorioChamado.CadastrarChamado(novoChamado);
 
         Notificador.ExibirMensagem("Registro concluído com sucesso!", ConsoleColor.Green);
