@@ -52,7 +52,7 @@ namespace GestaoDeEquipamentos.ConsoleApp.ModuloFabricante
             {
                 Notificador.ExibirMensagem(erros, ConsoleColor.Red);
 
-                CadastrarFabricante(); // Recursão Retornao ao meetodo novamente(recursividade)
+                CadastrarFabricante(); // Recursão Retornao ao meetodos novamente(recursividade)
                                        // quanto um metodo chama ele mesmo para retornoar como Loop dentro de uma condição
                 return;
             }

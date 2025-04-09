@@ -26,7 +26,7 @@ public class Fabricante
         if(string.IsNullOrWhiteSpace(Email)) // verifica se o email é nulo ou vazio
             erros += "O campo E-mail é obrigatório.\n";
 
-         if (!MailAddress.TryCreate(Email, out _)); // _ (underline) é um placeholder(palavraChave) para ignorar o valor retornado(descarte)
+        if (!MailAddress.TryCreate(Email, out _));  // _ (underline) é um placeholder(palavraChave) para ignorar o valor retornado(descarte)
         erros += "O campo E-mail deve ser um e-mail válido.\n";
 
         if (string.IsNullOrWhiteSpace(Telefone)) // verifica se o telefone é nulo ou vazio
