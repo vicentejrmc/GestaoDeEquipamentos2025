@@ -8,8 +8,8 @@ namespace GestaoDeEquipamentos.ConsoleApp.ModuloFabricante;
 
 public class RepositorioFabricante
 {
-    public Fabricante[] fabricantes = new Fabricante[100];
-    public int contadorFabricantes = 0;
+    private Fabricante[] fabricantes = new Fabricante[100];
+    private int contadorFabricantes = 0;
 
     public void CadastrarFabricante(Fabricante novoFabricante)
     {

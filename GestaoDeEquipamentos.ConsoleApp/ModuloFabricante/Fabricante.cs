@@ -13,6 +13,21 @@ public class Fabricante
     public string Telefone;
     public Equipamento[] Equipamentos;
 
+    public int ObterQuantidade
+    {
+        get
+        {
+            int quantidade = 0;
+            for (int i = 0; i < Equipamentos.Length; i++)
+            {
+                if (Equipamentos[i] != null)
+                    quantidade++;
+            }
+            return quantidade;
+        }
+    }
+
+
     public string Validar()
     {
         string erros = "";
@@ -70,18 +85,5 @@ public class Fabricante
             }
         }
     }
-
-    public int ObterQuantidadeEquipamentos()
-    {
-        int quantidade = 0;
-        for (int i = 0; i < Equipamentos.Length; i++)
-        {
-            if (Equipamentos[i] != null)
-                quantidade++;
-        }
-        return quantidade;
-    }
-
-
 
 }

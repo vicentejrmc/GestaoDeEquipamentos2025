@@ -137,7 +137,7 @@ namespace GestaoDeEquipamentos.ConsoleApp.ModuloFabricante
 
                 Console.WriteLine(
                     "{0, -10} | {1, -15} | {2, -11} | {3, -15} | {4, -20}",
-                    f.Id, f.Nome, f.Email, f.Telefone, f.ObterQuantidadeEquipamentos()
+                    f.Id, f.Nome, f.Email, f.Telefone, f.ObterQuantidade
                 );
             }
             Console.WriteLine();

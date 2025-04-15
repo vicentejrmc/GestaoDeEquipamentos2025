@@ -5,8 +5,8 @@ namespace GestaoDeEquipamentos.ConsoleApp.ModuloEquipamento;
 
 public class RepositorioEquipamento
 {
-    public Equipamento[] equipamentos = new Equipamento[100];
-    public int contadorEquipamentos = 0;
+    private Equipamento[] equipamentos = new Equipamento[100];
+    private int contadorEquipamentos = 0;
 
     public Fabricante[] fabricantes = new Fabricante[100];
 

@@ -158,7 +158,7 @@ public class TelaEquipamento
 
             Console.WriteLine(
                 "{0, -10} | {1, -15} | {2, -11} | {3, -15} | {4, -15} | {5, -10}",
-                e.Id, e.Nome, e.ObterNumeroSerie(), e.Fabricante.Nome, e.PrecoAquisicao.ToString("C2"), e.DataFabricacao.ToShortDateString()
+                e.Id, e.Nome, e.NumeroSerie, e.Fabricante.Nome, e.PrecoAquisicao.ToString("C2"), e.DataFabricacao.ToShortDateString()
             );
         }
 
@@ -212,7 +212,7 @@ public class TelaEquipamento
 
             Console.WriteLine(
             "{0, -6} | {1, -20} | {2, -30} | {3, -30} | {4, -20}",
-                fab.Id, fab.Nome, fab.Email, fab.Telefone, fab.ObterQuantidadeEquipamentos()
+                fab.Id, fab.Nome, fab.Email, fab.Telefone, fab.ObterQuantidade
             );
         }
 
