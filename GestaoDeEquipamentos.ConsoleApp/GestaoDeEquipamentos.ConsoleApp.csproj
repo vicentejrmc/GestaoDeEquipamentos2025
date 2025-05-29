@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="GestaoDeEquipamentos\ConsoleApp\" />
+    <Compile Remove="GestaoDeEquipamentos\**" />
+    <Content Remove="GestaoDeEquipamentos\**" />
+    <EmbeddedResource Remove="GestaoDeEquipamentos\**" />
+    <None Remove="GestaoDeEquipamentos\**" />
   </ItemGroup>
 
 </Project>
