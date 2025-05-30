@@ -1,0 +1,46 @@
+@using GestaoDeEquipamentos.ConsoleApp.Models
+@using GestaoDeEquipamentos.ConsoleApp.ModuloFabricante
+
+@model VisualizarFabricantesViewModel;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Visualização de Fabricantes - Gestão de Equipamentos</title>
+</head>
+
+<body>
+    <nav>
+        <h2>Gestão de Equipamentos</h2>
+
+        <ul>
+            <li><a  href="/">Página Inicial</a></li>
+            <li><a  href="/fabricantes/visualizar">Fabricantes</a></li>
+            <li><a  href="/equipamentos/visualizar">Equipamentos</a></li>
+            <li><a  href="/chamados/visualizar">Chamados</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h3>Visualização de Fabricantes</h3>
+    </header>
+
+    <main>
+        @foreach (DetalhesFabricanteViewModel f in Model.Registros)
+        {
+            <div>
+                <h3>@f.Nome</h3>
+
+                <p><strong>Email:</strong> @f.Email</p>
+                <p><strong>Telefone:</strong> @f.Telefone</p>
+
+                <div>
+                    <a type="button" href="/fabricantes/editar/@f.Id">Editar</a>
+                    <a type="button" href="/fabricantes/excluir/@f.Id">Excluir</a>
+                </div>
+            </div>
+        }
+    </main>
+</body>
+</html>

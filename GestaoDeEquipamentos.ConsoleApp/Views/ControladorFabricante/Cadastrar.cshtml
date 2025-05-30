@@ -1,0 +1,45 @@
+@using GestaoDeEquipamentos.ConsoleApp.Models
+
+@model CadastrarFabricanteViewModel;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Cadastro de Fabricante - Gestão de Equipamentos</title>
+</head>
+
+<body>
+    <h1>Gestão de Equipamentos</h1>
+
+    <hr />
+
+    <a href="/">Página Inicial</a> /
+    <a href="/fabricantes/visualizar">Visualizar Fabricantes</a>
+
+    <hr />
+
+    <h3>Cadastro de Fabricante</h3>
+
+    <form action="/fabricantes/cadastrar" method="post">
+        <label>Nome do Fabricante:</label>
+        <br />
+        <input type="text" name="nome" />
+
+        <br />
+
+        <label>Email do Fabricante:</label>
+        <br />
+        <input type="text" name="email" />
+
+        <br />
+
+        <label>Telefone do Fabricante:</label>
+        <br />
+        <input type="text" name="telefone" />
+        <hr />
+
+        <button type="submit">Gravar</button>
+    </form>
+</body>
+</html>
