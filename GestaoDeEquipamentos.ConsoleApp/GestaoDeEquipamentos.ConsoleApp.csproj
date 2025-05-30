@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="GestaoDeEquipamentos\ConsoleApp\" />
+    <Compile Remove="GestaoDeEquipamentos\**" />
+    <EmbeddedResource Remove="GestaoDeEquipamentos\**" />
+    <None Remove="GestaoDeEquipamentos\**" />
   </ItemGroup>
 
 </Project>

@@ -1,16 +1,29 @@
-﻿using GestaoDeEquipamentos.ConsoleApp.ModuloEquipamento;
+﻿using GestaoDeEquipamentos.ConsoleApp.Compartilhado;
+using GestaoDeEquipamentos.ConsoleApp.ModuloEquipamento;
 
 namespace GestaoDeEquipamentos.ConsoleApp.ModuloChamado;
 
-public class Chamado
+public class Chamado : EntidadeBase<Chamado>
 {
-    public int Id;
-    public string Titulo;
-    public string Descricao;
-    public Equipamento Equipamento;
-    public DateTime DataAbertura;
+    public string Titulo { get; set; }
+    public string Descricao { get; set; }
+    public Equipamento Equipamento { get; set; }
+    public DateTime DataAbertura { get; set; }
+    public int TempoDecorrido
+    {
+        get
+        {
+            TimeSpan diferencaTempo = DateTime.Now.Subtract(DataAbertura);
 
-    public Chamado(string titulo, string descricao, Equipamento equipamento)
+            return diferencaTempo.Days;
+        }
+    }
+
+    public Chamado()
+    {
+    }
+
+    public Chamado(string titulo, string descricao, Equipamento equipamento) : this()
     {
         Titulo = titulo;
         Descricao = descricao;
@@ -18,10 +31,29 @@ public class Chamado
         DataAbertura = DateTime.Now;
     }
 
-    public int ObterTempoDecorrido()
+    public override void AtualizarRegistro(Chamado chamadoAtualizado)
     {
-        TimeSpan diferencaTempo = DateTime.Now.Subtract(DataAbertura);
+        Titulo = chamadoAtualizado.Titulo;
+        Descricao = chamadoAtualizado.Descricao;
+        Equipamento = chamadoAtualizado.Equipamento;
+    }
 
-        return diferencaTempo.Days;
+    public override string Validar()
+    {
+        string erros = "";
+
+        if (string.IsNullOrWhiteSpace(Titulo))
+            erros += "O campo 'Título' é obrigatório.\n";
+
+        if (Titulo.Length < 3)
+            erros += "O campo 'Título' precisa conter ao menos 3 caracteres.\n";
+
+        if (string.IsNullOrWhiteSpace(Descricao))
+            erros += "O campo 'Descrição' é obrigatório.\n";
+
+        if (Equipamento == null)
+            erros += "O campo 'Equipamento' é obrigatório.\n";
+
+        return erros;
     }
 }
