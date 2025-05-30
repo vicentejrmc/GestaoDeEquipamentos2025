@@ -1,0 +1,34 @@
+﻿@using GestaoDeEquipamentos.ConsoleApp.Models;
+
+@model VisualizarEquipamentosViewModel;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Visualização de Equipamentos - Gestão de Equipamentos</title>
+</head>
+
+<body>
+    <h1>Gestão de Equipamentos</h1>
+
+    <hr />
+
+    <a href="/">Página Inicial</a> /
+    <a href="/equipamentos/cadastrar">Cadastrar Novo Equipamento</a> /
+
+    <hr />
+
+    <h3>Visualização de Equipamentos</h3>
+
+    <ul>
+        @foreach (var e in Model.Registros)
+        {
+            <li>
+                @e.ToString() / <a href="/equipamentos/editar/@e.Id">Editar</a> /
+                <a href="/equipamentos/excluir/@e.Id">Excluir</a>
+            </li>
+        }
+    </ul>
+</body>
+</html>

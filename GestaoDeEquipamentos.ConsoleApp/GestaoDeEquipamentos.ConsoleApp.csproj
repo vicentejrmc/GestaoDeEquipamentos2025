@@ -13,8 +13,4 @@
     <None Remove="GestaoDeEquipamentos\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\NewFolder\" />
-  </ItemGroup>
-
 </Project>
