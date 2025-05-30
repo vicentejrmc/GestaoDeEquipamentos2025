@@ -1,0 +1,51 @@
+﻿@using GestaoDeEquipamentos.ConsoleApp.Models
+@model CadastrarChamadoViewModel;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Cadastro de Chamado - Gestão de Equipamentos</title>
+</head>
+
+<body>
+    <h1>Gestão de Equipamentos</h1>
+
+    <hr />
+
+    <a href="/">Página Inicial</a> /
+    <a href="/chamados/visualizar">Visualizar Chamados</a>
+
+    <hr />
+
+    <h3>Cadastro de Chamado</h3>
+
+    <form action="/chamados/cadastrar" method="post">
+
+        <label for="Titulo">Título do Chamado:</label>
+        <br />
+        <input type="text" name="Titulo" id="Titulo" />
+
+        <br />
+
+        <label for="Descricao">Descrição do Chamado:</label>
+        <br />
+        <textarea name="Descricao" id="Descricao"></textarea>
+
+        <br />
+
+        <label for="EquipamentoId">Equipamento do Chamado:</label>
+        <br />
+        <select name="EquipamentoId" id="EquipamentoId">
+            @foreach (var equipamento in Model.EquipamentosDisponiveis)
+            {
+                <option value="@equipamento.Id">@equipamento.Nome</option>
+            }
+        </select>
+
+        <hr />
+
+        <button type="submit">Gravar</button>
+    </form>
+</body>
+</html>
