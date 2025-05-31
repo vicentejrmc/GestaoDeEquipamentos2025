@@ -8,6 +8,11 @@
     ViewBag.Titulo = "Edição de Fabricante";
 }
 
+<button><a href="/fabricantes/cadastrar">Cadastrar Novo Fabricante</a></button>
+<button><a href="/fabricantes/visualizar">Visualizar Fabricantes</a></button>
+
+<hr>
+
 <form action="/fabricantes/editar/@Model.Id" method="post">
     <label>Nome do Fabricante:</label>
     <br />

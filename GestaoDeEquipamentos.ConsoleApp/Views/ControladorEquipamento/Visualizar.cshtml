@@ -2,33 +2,20 @@
 
 @model VisualizarEquipamentosViewModel;
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Visualização de Equipamentos - Gestão de Equipamentos</title>
-</head>
+﻿@{
+    Layout = "_Layout";
+    ViewBag.Titulo = "Visualização de Equipamentos";
+}
 
-<body>
-    <h1>Gestão de Equipamentos</h1>
+<button><a href="/equipamentos/cadastrar">Cadastrar Novo Equipamento</a></button>
 
-    <hr />
+<hr>
 
-    <a href="/">Página Inicial</a> /
-    <a href="/equipamentos/cadastrar">Cadastrar Novo Equipamento</a> /
-
-    <hr />
-
-    <h3>Visualização de Equipamentos</h3>
-
-    <ul>
-        @foreach (var e in Model.Registros)
-        {
-            <li>
-                @e.ToString() / <a href="/equipamentos/editar/@e.Id">Editar</a> /
-                <a href="/equipamentos/excluir/@e.Id">Excluir</a>
-            </li>
-        }
-    </ul>
-</body>
-</html>
+<ul>
+    @foreach (var e in Model.Registros)
+    {
+        <li>
+            @e.ToString()<button><a href="/equipamentos/editar/@e.Id">Editar</a> </button> <button><a href="/equipamentos/excluir/@e.Id">Excluir</a></button>
+        </li>
+    }
+</ul>

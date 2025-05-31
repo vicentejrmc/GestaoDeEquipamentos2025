@@ -3,31 +3,19 @@
 
 @model ExcluirEquipamentoViewModel;
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Exclusão de Equipamento - Gestão de Equipamentos</title>
-</head>
+﻿@{
+    Layout = "_Layout";
+    ViewBag.Titulo = "Exclusão de Equipamentos";
+}
 
-<body>
-    <h1>Gestão de Equipamentos</h1>
+<button><a href="/equipamentos/cadastrar">Cadastrar Novo Equipamento</a></button>
+<button><a href="/equipamentos/visualizar">Visualizar Equipamento</a></button>
 
-    <hr />
+<hr>
 
-    <a href="/">Página Inicial</a> /
-    <a href="/equipamentos/cadastrar">Cadastrar Novo Equipamento</a> /
-    <a href="/equipamentos/visualizar">Visualizar Equipamentos</a>
+<p>Você tem certeza que deseja excluir o registro "@Model.Nome"?</p>
 
-    <hr />
-
-    <h3>Exclusão de Equipamento</h3>
-
-    <p>Você tem certeza que deseja excluir o registro "@Model.Nome"?</p>
-
-    <form action="/equipamentos/excluir/@Model.Id" method="post">
-        <button type="submit">Confirmar</button>
-        <a href="/equipamentos/visualizar">Voltar</a>
-    </form>
-</body>
-</html>
+<form action="/equipamentos/excluir/@Model.Id" method="post">
+    <button type="submit">Confirmar</button>
+    <button><a href="/equipamentos/visualizar">Voltar</a></button>   
+</form>
