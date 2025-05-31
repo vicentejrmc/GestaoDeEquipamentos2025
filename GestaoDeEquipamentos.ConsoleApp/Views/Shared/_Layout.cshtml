@@ -1,0 +1,49 @@
+﻿﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/app.css" />
+
+    <title>@ViewBag.Titulo - Gestão de Equipamentos</title>
+</head>
+
+<style>
+    #cabecalho{
+        height: 60px;
+        align-content: center;
+        text-align: center;
+        background-color: #23231A;
+        color: #F77F00;
+        padding: 10px;
+        margin-left: 0px;
+        border-radius: 5px;
+    }
+</style>
+
+
+<body>
+    <div id="cabecalho">
+        <h2>Gestão de Equipamentos</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="/">Página Inicial</a></li>
+            <li><a href="/equipamentos/visualizar">Equipamentos</a></li>
+            <li><a href="/fornecedores/visualizar">Fornecedores</a></li>
+            <li><a href="/chamados/visualizar">Chamados</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h2>@ViewBag.Titulo</h2>
+    </header>
+    <main>
+        @* placeholder do conteúdo que será carregado *@
+        @RenderBody()
+    </main>
+</body>
+</html>

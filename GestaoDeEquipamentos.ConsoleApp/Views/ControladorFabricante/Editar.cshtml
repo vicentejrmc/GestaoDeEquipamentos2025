@@ -3,45 +3,28 @@
 
 @model EditarFabricanteViewModel;
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Edição de Fabricante - Gestão de Equipamentos</title>
-</head>
+﻿@{
+    Layout = "_Layout";
+    ViewBag.Titulo = "Edição de Fabricante";
+}
 
-<body>
-    <h1>Gestão de Equipamentos</h1>
+<form action="/fabricantes/editar/@Model.Id" method="post">
+    <label>Nome do Fabricante:</label>
+    <br />
+    <input type="text" name="nome" value="@Model.Nome" />
 
+    <br />
+
+    <label>Email do Fabricante:</label>
+    <br />
+    <input type="text" name="email" value="@Model.Email" />
+
+    <br />
+
+    <label>Telefone do Fabricante: </label>
+    <br />
+    <input type="text" name="telefone" value="@Model.Telefone" />
     <hr />
 
-    <a href="/">Página Inicial</a> /
-    <a href="/fabricantes/cadastrar">Cadastrar Novo Fabricante</a> /
-    <a href="/fabricantes/visualizar">Visualizar Fabricantes</a>
-
-    <hr />
-
-    <h3>Edição de Fabricante</h3>
-
-    <form action="/fabricantes/editar/@Model.Id" method="post">
-        <label>Nome do Fabricante:</label>
-        <br />
-        <input type="text" name="nome" value="@Model.Nome" />
-
-        <br />
-
-        <label>Email do Fabricante:</label>
-        <br />
-        <input type="text" name="email" value="@Model.Email" />
-
-        <br />
-
-        <label>Telefone do Fabricante: </label>
-        <br />
-        <input type="text" name="telefone" value="@Model.Telefone" />
-        <hr />
-
-        <button type="submit">Gravar</button>
-    </form>
-</body>
-</html>
+    <button type="submit">Gravar</button>
+</form>
