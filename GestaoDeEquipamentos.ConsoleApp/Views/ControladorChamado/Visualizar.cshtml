@@ -1,33 +1,20 @@
 ﻿@using GestaoDeEquipamentos.ConsoleApp.Models
 @model VisualizarChamadosViewModel;
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Visualização de Chamados - Gestão de Equipamentos</title>
-</head>
+﻿@{
+    Layout = "_Layout";
+    ViewBag.Titulo = "Visualização de Chamados";
+}
 
-<body>
-    <h1>Gestão de Equipamentos</h1>
+<button><a href="/chamados/cadastrar">Cadastrar Novo Chamado</a></button>
 
-    <hr />
+<hr>
 
-    <a href="/">Página Inicial</a> /
-    <a href="/chamados/cadastrar">Cadastrar Novo Chamado</a> /
-
-    <hr />
-
-    <h3>Visualização de Chamados</h3>
-
-    <ul>
-        @foreach (var e in Model.Registros)
-        {
-            <li>
-                @e.ToString() / <a href="/chamados/editar/@e.Id">Editar</a> /
-                <a href="/chamados/excluir/@e.Id">Excluir</a>
-            </li>
-        }
-    </ul>
-</body>
-</html>
+<ul>
+    @foreach (var e in Model.Registros)
+    {
+        <li>
+            @e.ToString() <button> <a href="/chamados/editar/@e.Id">Editar</a></button> <button><a href="/chamados/excluir/@e.Id">Finalizar</a></button>
+        </li>
+    }
+</ul>
