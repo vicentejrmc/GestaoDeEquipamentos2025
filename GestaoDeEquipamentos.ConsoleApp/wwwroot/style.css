@@ -1,6 +1,7 @@
 ﻿:root {
     --cor-neutra: #F5F5F5;
-    --cor-secundaria: #23231A;
+    --cor-secundaria: #709176;
+    --cor-fonte: #23231A;
 }
 
 body {
@@ -9,23 +10,38 @@ body {
     margin: 0px;
     padding: 0px;
 }
-
-#cabecalho {
-    width: 100%;
-    display: flex;
-    background-color: var(--cor-secundaria);
-    padding: 10px;
-}
-
 h2 {
     color: var(--cor-neutra);
+    margin-left: 10px;
 }
 
-#link-menu-principal {
-    display: flex;
-    list-style-type: none;
-    flex-wrap: wrap;
-    justify-content: space-around;
+h4 > a {
+    text-decoration: none;
+    border: 1px solid var(--cor-fonte);
+    margin-top: 5px;
+    font-size: 1.1em;
+    color: var(--cor-fonte);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+h4 > a:hover{
+    color: var(--cor-neutra);
+    background-color: var(--cor-fonte);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+li > a {
+    display: inline-flex;
+    text-decoration: none;
+    color: var(--cor-fonte);
+    font-weight: 550;
+    font-weight: 600;
+}
+
+hr{
+    border: 1px solid var(--cor-fonte);
 }
 
 main {
@@ -33,4 +49,34 @@ main {
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
 }
+
+#cabecalho {
+    width: 100%;
+    display: flex;
+    background-color: var(--cor-secundaria);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--cor-fonte);
+    font-size: 1.2em;
+}
+
+#button-inicial{
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+
+#link-inicio{
+    margin: 20px;
+    text-decoration: none;
+    border: 1px solid var(--cor-secundaria);
+}
+
+.button-style {
+    width: 300px;
+    height: 90px;
+    font-size: 1.2em;
+}
+

@@ -11,24 +11,24 @@
 </head>
 
 <body>
+
     <div id="cabecalho">
         <h2>Gestão de Equipamentos</h2>
     </div>
 
-    <nav>
-        <ul id="link-menu-principal">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/equipamentos/visualizar">Equipamentos</a></li>
-            <li><a href="/fabricantes/visualizar">Fabricantes</a></li>
-            <li><a href="/chamados/visualizar">Chamados</a></li>
-        </ul>
-    </nav>
+    <div style="max-width: 768px; text-align: center;">
+        <h4 id="button-inicial"><a href="/">Inicio</a></h4>
+        <h4 id="button-inicial"><a href="/fabricantes/visualizar">Fabricantes</a></h4>
+        <h4 id="button-inicial"><a href="/equipamentos/visualizar">Equipamentos</a></h4>
+        <h4 id="button-inicial"><a href="/chamados/visualizar">Chamados</a></h4>
+    </div>
+
+    <hr>
 
     <header>
         <h2>@ViewBag.Titulo</h2>
     </header>
     <main>
-        @* placeholder do conteúdo que será carregado *@
         @RenderBody()
     </main>
 </body>
