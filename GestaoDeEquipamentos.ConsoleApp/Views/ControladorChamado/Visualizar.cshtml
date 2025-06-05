@@ -14,7 +14,11 @@
     @foreach (var e in Model.Registros)
     {
         <li>
-            @e.ToString() <button> <a href="/chamados/editar/@e.Id">Editar</a></button> <button><a href="/chamados/excluir/@e.Id">Finalizar</a></button>
+            <p>@e.ToString()</p>
+            <div>
+                <button> <a href="/chamados/editar/@e.Id">Editar</a></button>
+                <button><a href="/chamados/excluir/@e.Id">Finalizar</a></button>
+            </div>        
         </li>
     }
 </ul>
