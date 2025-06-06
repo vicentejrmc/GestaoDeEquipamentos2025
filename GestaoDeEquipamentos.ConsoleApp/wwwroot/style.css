@@ -15,21 +15,24 @@ h2 {
     margin-left: 10px;
 }
 
+a{
+    text-decoration: none;
+}
+
 h4 > a {
     text-decoration: none;
-    border: 1px solid var(--cor-fonte);
+    border: 2px solid var(--cor-secundaria);
     margin-top: 5px;
-    font-size: 1.1em;
     color: var(--cor-fonte);
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 h4 > a:hover{
     color: var(--cor-neutra);
-    background-color: var(--cor-fonte);
-    border-radius: 10px;
-    transition: 0.5s;
+    background-color: var(--cor-secundaria);
+    border-radius: 5px;
+    transition: 0.4s;
 }
 
 li > a {
@@ -41,7 +44,7 @@ li > a {
 }
 
 hr{
-    border: 1px solid var(--cor-fonte);
+    border: 1px solid var(--cor-secundaria);
 }
 
 main {
@@ -58,7 +61,6 @@ main {
     background-color: var(--cor-secundaria);
     padding-top: 5px;
     padding-bottom: 5px;
-    border-bottom: 2px solid var(--cor-fonte);
     font-size: 1.2em;
 }
 
@@ -74,9 +76,5 @@ main {
     border: 1px solid var(--cor-secundaria);
 }
 
-.button-style {
-    width: 300px;
-    height: 90px;
-    font-size: 1.2em;
-}
+
 
