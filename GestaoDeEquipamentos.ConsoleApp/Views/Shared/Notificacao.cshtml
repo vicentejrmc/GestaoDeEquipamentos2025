@@ -1,26 +1,9 @@
 ﻿@using GestaoDeEquipamentos.ConsoleApp.Models
-
-
 @model NotificacaoViewModel;
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>@Model.TituloPagina - Gestão de Equipamentos</title>
-</head>
+﻿@{
+    Layout = "_Layout";
+    ViewBag.Titulo = "Visualização de Equipamentos";
+}
 
-<body>
-    <h1>Gestão de Equipamentos</h1>
-
-    <hr />
-
-    <a href="/">Página Inicial</a> /
-
-    <hr />
-
-    <h3>@Model.TituloPagina</h3>
-
-    <p>@Model.Mensagem</p>
-</body>
-</html>
+<p>@Model.Mensagem</p>

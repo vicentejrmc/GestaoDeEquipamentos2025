@@ -6,19 +6,25 @@
     ViewBag.Titulo = "Visualização de Chamados";
 }
 
-<button><a href="/chamados/cadastrar">Cadastrar Novo Chamado</a></button>
+<div class="botao-cadastrar">
+    <a href="/chamados/cadastrar">Cadastrar Novo Chamado</a>
+</div>
 
-<hr>
-
-<ul>
     @foreach (var e in Model.Registros)
-    {
-        <li>
-            <p>@e.ToString()</p>
-            <div>
-                <button> <a href="/chamados/editar/@e.Id">Editar</a></button>
-                <button><a href="/chamados/excluir/@e.Id">Finalizar</a></button>
-            </div>        
-        </li>
+    { 
+        <ul class="card-visualizar">
+            <li>
+                <div>
+                    <p><strong> Equipamento: @e.NomeEquipamento</strong></p>
+                    <p><strong>@e.Titulo</strong> | Data: @e.DataAbertura</p>
+                    <p><strong>Descrição: </strong>@e.Descricao</p>    
+                </div>
+                <div>
+                    <a href="/chamados/editar/@e.Id">Editar</a>
+                    <a href="/chamados/excluir/@e.Id">Finalizar</a>
+                </div>
+            </li>
+        </ul>
+
     }
-</ul>
+

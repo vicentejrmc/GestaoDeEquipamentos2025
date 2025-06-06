@@ -7,19 +7,29 @@
     ViewBag.Titulo = "Visualização de Equipamentos";
 }
 
-<button><a href="/equipamentos/cadastrar">Cadastrar Novo Equipamento</a></button>
+<div class="botao-cadastrar">
+    <a href="/equipamentos/cadastrar">Cadastrar Novo Equipamento</a>
+</div>
 
-<hr>
 
-<ul>
-    @foreach (var e in Model.Registros)
-    {
-        <li>
-            <p>@e.ToString()</p>
-            <div>
-                <button><a href="/equipamentos/editar/@e.Id">Editar</a> </button>
-                <button><a href="/equipamentos/excluir/@e.Id">Excluir</a></button>
-            </div>        
-        </li>
-    }
-</ul>
+        @foreach (var e in Model.Registros)
+        {
+          <ul class="card-visualizar">
+            <li>
+                <div>
+                    <p><strong>Nome: </strong>@e.Nome</p>
+                    <p><strong>Fabricante: </strong>@e.NomeFabricante</p>
+                    <p><strong>Data fabricação: </strong>@e.DataFabricacao</p>
+                    <p><strong>Preço de Aquisição: </strong>@e.PrecoAquisicao</p>
+                </div>
+
+                <div>
+                    <a href="/equipamentos/editar/@e.Id">Editar</a>
+                    <a href="/equipamentos/excluir/@e.Id">Excluir</a>
+                </div>
+            </li>
+          </ul>
+
+        }
+
+

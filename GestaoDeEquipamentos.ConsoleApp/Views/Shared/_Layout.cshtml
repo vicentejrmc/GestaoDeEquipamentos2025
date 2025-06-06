@@ -16,18 +16,15 @@
         <h2>Gestão de Equipamentos</h2>
     </div>
 
-    <div style="max-width: 768px; text-align: center;">
-        <h4 id="button-inicial"><a href="/">Inicio</a></h4>
-        <h4 id="button-inicial"><a href="/fabricantes/visualizar">Fabricantes</a></h4>
-        <h4 id="button-inicial"><a href="/equipamentos/visualizar">Equipamentos</a></h4>
-        <h4 id="button-inicial"><a href="/chamados/visualizar">Chamados</a></h4>
+    <div>
+        <a class="button-inicial" href="/">Pagina inicial</a>
+        <a class="button-inicial" href="/fabricantes/visualizar">Fabricantes</a>
+        <a class="button-inicial" href="/equipamentos/visualizar">Equipamentos</a>
+        <a class="button-inicial" href="/chamados/visualizar">Chamados</a>
     </div>
 
     <hr>
 
-    <header>
-        <h2>@ViewBag.Titulo</h2>
-    </header>
     <main>
         @RenderBody()
     </main>
