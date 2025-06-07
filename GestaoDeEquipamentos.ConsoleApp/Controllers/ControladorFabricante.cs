@@ -9,6 +9,7 @@ namespace GestaoDeEquipamentos.ConsoleApp.Controllers
     [Route("fabricantes")]
     public class ControladorFabricante : Controller
     {
+        [HttpGet("cadastrar")]
         public IActionResult ExibirFormularioCadastroFabricante()
         {
             CadastrarFabricanteViewModel cadastrarVM = new CadastrarFabricanteViewModel();

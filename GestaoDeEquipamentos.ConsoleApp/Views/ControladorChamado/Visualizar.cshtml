@@ -10,21 +10,20 @@
     <a href="/chamados/cadastrar">Cadastrar Novo Chamado</a>
 </div>
 
+<div>
     @foreach (var e in Model.Registros)
-    { 
+    {
         <ul class="card-visualizar">
             <li>
                 <div>
-                    <p><strong> Equipamento: @e.NomeEquipamento</strong></p>
-                    <p><strong>@e.Titulo</strong> | Data: @e.DataAbertura</p>
-                    <p><strong>Descrição: </strong>@e.Descricao</p>    
-                </div>
-                <div>
+                    <p><strong> Equipamento: @e.NomeEquipamento</strong> | <strong>@e.Titulo</strong></p>
+                    <p>Data: @e.DataAbertura</p>
+                    <p>@e.Descricao</p>
+
                     <a href="/chamados/editar/@e.Id">Editar</a>
-                    <a href="/chamados/excluir/@e.Id">Finalizar</a>
+                    <span><a href="/chamados/excluir/@e.Id">Finalizar</a></span>
                 </div>
             </li>
         </ul>
-
     }
-
+</div>
