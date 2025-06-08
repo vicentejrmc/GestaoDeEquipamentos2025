@@ -8,17 +8,16 @@
     ViewBag.Titulo = "Exclusão de Fabricante";
 }
 
-<button><a href="/fabricantes/cadastrar">Cadastrar Novo Fabricante</a></button>
-<button><a href="/fabricantes/visualizar">Visualizar Fabricantes</a></button>
-
-
-<hr />
-
+<div class="visualizar-cadastrar">
+    <a href="/fabricantes/cadastrar">Cadastrar Novo Fabricante</a>
+    <a href="/fabricantes/visualizar">Visualizar Fabricantes</a>
+</div>
 <h3>Exclusão de Fabricante</h3>
-
 <p>Você tem certeza que deseja excluir o registro "@Model.Nome"?</p>
 
 <form action="/fabricantes/excluir/@Model.Id" method="post">
-    <button type="submit">Confirmar</button>
-    <button><a href="/fabricantes/visualizar">Voltar</a></button>
+    <hr />
+    <button class="botao-submit" style="background-color: var(--cor-excluir);" type="submit">Confirmar</button>
+    <a href="/fabricantes/visualizar">Voltar</a>
 </form>
+<hr>

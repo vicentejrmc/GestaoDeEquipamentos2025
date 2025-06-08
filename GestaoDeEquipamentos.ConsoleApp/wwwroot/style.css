@@ -2,6 +2,7 @@
     --cor-neutra: #F5F5F5;
     --cor-secundaria: forestgreen;
     --cor-principal: #23231A;
+    --cor-excluir: #9D0D00;
 }
 
 body {
@@ -33,7 +34,7 @@ a {
     border: 2px solid var(--cor-principal);
     margin-top: 5px;
     color: var(--cor-principal);
-    padding: 5px;
+    padding: 3px;
     text-decoration: none;
     border-radius: 5px;
 }
@@ -49,7 +50,7 @@ a {
     }
 
 span > a:hover {
-    background-color: #9D0D00;
+    background-color: var(--cor-excluir);
 }
 
 li > a {
@@ -120,9 +121,12 @@ select {
 }
 
 .visualizar-cadastrar {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    height: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
 }
 
 .botoes {
@@ -140,10 +144,14 @@ select {
 }
 
 .botao-submit{
+    border: 2px solid var(--cor-principal);
     width: 100px;
+    height: 35px;
+    margin-top: 10px;
     padding: 5px;
     font-size: 1em;
     border-radius: 5px;
+    cursor: pointer;
 }
 
     .botao-submit:hover {
