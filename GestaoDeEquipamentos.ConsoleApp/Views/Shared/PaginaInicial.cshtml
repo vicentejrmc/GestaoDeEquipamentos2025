@@ -21,32 +21,34 @@ ViewBag.Titulo = "";
     <h4>Chamados</h4><p>Gerencie os chamados de manutenção aqui.</p>
 </a>
 
-@if (equipamentos != null && equipamentos.Any())
-{
-    <h3>Equipamentos Cadastrados</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Fabricante</th>
-                <th>Preço de Aquisição</th>
-                <th>Data de Fabricação</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var equipamento in equipamentos)
-            {
+<div class="tabela">
+    @if (equipamentos != null && equipamentos.Any())
+    {
+        <h3>Equipamentos Cadastrados</h3>
+        <table class="tabela-equipamentos">
+            <thead>
                 <tr>
-                    <td>@equipamento.Nome</td>
-                    <td>@equipamento.NomeFabricante</td>
-                    <td>@equipamento.PrecoAquisicao.ToString("C2")</td>
-                    <td>@equipamento.DataFabricacao.ToString("dd/MM/yyyy")</td>
+                    <th>Nome</th>
+                    <th>Fabricante</th>
+                    <th>Preço de Aquisição</th>
+                    <th>Data de Fabricação</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-}
-else
-{
-    <p>Nenhum equipamento cadastrado.</p>
-}
+            </thead>
+            <tbody>
+                @foreach (var equipamento in equipamentos)
+                {
+                    <tr>
+                        <td>@equipamento.Nome</td>
+                        <td>@equipamento.NomeFabricante</td>
+                        <td>@equipamento.PrecoAquisicao.ToString("C2")</td>
+                        <td>@equipamento.DataFabricacao.ToString("dd/MM/yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Ainda não há nenhum equipamento cadastrado.</p>
+    }
+</div>

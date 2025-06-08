@@ -7,11 +7,9 @@
     ViewBag.Titulo = "Cadastro de Equipamentos";
 }
 
-<button><a href="/equipamentos/visualizar">Visualizar Equipamento</a></button>
+<a class="visualizar" href="/equipamentos/visualizar">Visualizar Equipamento</a>
 
-<hr>
-
-<form action="/equipamentos/cadastrar" method="post">
+<form class="forms" action="/equipamentos/cadastrar" method="post">
 
     <label for="Nome">Nome do Equipamento:</label>
     <br />
@@ -39,8 +37,7 @@
             <option value="@fabricante.Id">@fabricante.Nome</option>
         }
     </select>
-
-    <hr />
-
-    <button type="submit">Gravar</button>
+    <br>
+    <button class="botao-submit" type="submit">Gravar</button>
 </form>
+<hr>

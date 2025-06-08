@@ -4,10 +4,13 @@
 
 ﻿@{
     Layout = "_Layout";
-    ViewBag.Titulo = "Edição de Fabricante";
+    ViewBag.Titulo = "Cadastro de Fabricante";
 }
 
-<form action="/fabricantes/cadastrar" method="post">
+
+<a class="visualizar" href="/equipamentos/visualizar">Visualizar Equipamentos</a>
+
+<form class="forms" action="/fabricantes/cadastrar" method="post">
     <label>Nome do Fabricante:</label>
     <br />
     <input type="text" name="nome" />
@@ -23,8 +26,7 @@
     <label>Telefone do Fabricante:</label>
     <br />
     <input type="text" name="telefone" />
-    <hr />
-
-    <button type="submit">Gravar</button>
+    <br>
+    <button class="botao-submit" type="submit">Gravar</button>
 </form>
-</html>
+<hr>
