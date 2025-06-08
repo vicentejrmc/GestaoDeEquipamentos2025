@@ -69,6 +69,8 @@ main {
 input {
     width: 200px;
     margin-bottom: 10px;
+    padding: 5px;
+    text-align: center;
     border: 2px solid var(--cor-principal);
     border-radius: 5px;
 }
@@ -117,8 +119,9 @@ select {
     margin-bottom: 10px;
 }
 
-.visualizar {
+.visualizar-cadastrar {
     display: block;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 

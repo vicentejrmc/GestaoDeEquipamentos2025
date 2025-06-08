@@ -7,12 +7,12 @@
     ViewBag.Titulo = "Edição de Equipamentos";
 }
 
-<button><a href="/equipamentos/cadastrar">Cadastrar Novo Equipamento</a></button>
-<button><a href="/equipamentos/visualizar">Visualizar Equipamento</a></button>
+<div class="visualizar-cadastrar">
+    <a href="/equipamentos/cadastrar">Cadastrar Novo Equipamento</a>
+    <a href="/equipamentos/visualizar">Visualizar Equipamento</a>
+</div>
 
-<hr>
-
-<form action="/equipamentos/editar/@Model.Id" method="post">
+<form class="forms" action="/equipamentos/editar/@Model.Id" method="post">
 
     <label for="Nome">Nome do Equipamento:</label>
     <br />
@@ -43,5 +43,5 @@
 
     <hr />
 
-    <button type="submit">Gravar</button>
+    <button class="botao-submit" type="submit">Gravar</button>
 </form>

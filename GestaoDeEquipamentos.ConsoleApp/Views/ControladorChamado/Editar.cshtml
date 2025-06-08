@@ -6,23 +6,16 @@
     ViewBag.Titulo = "Edição de Chamados";
 }
 
-<button><a href="/chamados/cadastrar">Cadastrar Novo Chamado</a></button>
-<button><a href="/chamados/visualizar">Visualizar Chamados</a></button>
+<div class="visualizar-cadastrar">
+    <a href="/chamados/cadastrar">Cadastrar Novo Chamado</a>
+    <a href="/chamados/visualizar">Visualizar Chamados</a>
+</div>
 
-<hr>
-
-<form action="/chamados/editar/@Model.Id" method="post">
+<form class="forms" action="/chamados/editar/@Model.Id" method="post">
 
     <label for="Titulo">Título do Chamado:</label>
     <br />
     <input type="text" name="Titulo" id="Titulo" value="@Model.Titulo" />
-
-    <br />
-
-    <label for="Descricao">Descrição do Chamado:</label>
-    <br />
-    <textarea name="Descricao" id="Descricao">@Model.Descricao</textarea>
-
     <br />
 
     <label for="EquipamentoId">Equipamento do Chamado:</label>
@@ -33,8 +26,25 @@
             <option value="@equipamento.Id" @(equipamento.Id == Model.EquipamentoId ? "selected" : "")>@equipamento.Nome</option>
         }
     </select>
+    <br>
+
+    <label for="Descricao">Descrição do Chamado:</label>
+    <br />
+    <textarea style="min-width: 250px; min-height: 70px;" name="Descricao" id="Descricao" maxlength="100"></textarea>
+    <p id="contadorDescricao" style="font-size: 12px; margin-top: -5px;">Restam 100 caracteres</p>
 
     <hr />
 
-    <button type="submit">Gravar</button>
+    <button class="botao-submit" type="submit">Gravar</button>
 </form>
+
+<script>
+    const textarea = document.getElementById('Descricao');
+    const contador = document.getElementById('contadorDescricao');
+    const max = 100;
+
+    textarea.addEventListener('input', function () {
+        const restante = max - textarea.value.length;
+        contador.textContent = `Restam ${restante} caracteres`;
+    });
+</script>

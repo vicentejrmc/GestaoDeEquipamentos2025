@@ -8,12 +8,12 @@
     ViewBag.Titulo = "Edição de Fabricante";
 }
 
-<button><a href="/fabricantes/cadastrar">Cadastrar Novo Fabricante</a></button>
-<button><a href="/fabricantes/visualizar">Visualizar Fabricantes</a></button>
+<div class="visualizar-cadastrar">
+    <a href="/fabricantes/cadastrar">Cadastrar Novo Fabricante</a>
+    <a href="/fabricantes/visualizar">Visualizar Fabricantes</a>
+</div>
 
-<hr>
-
-<form action="/fabricantes/editar/@Model.Id" method="post">
+<form class="forms" action="/fabricantes/editar/@Model.Id" method="post">
     <label>Nome do Fabricante:</label>
     <br />
     <input type="text" name="nome" value="@Model.Nome" />
@@ -31,5 +31,5 @@
     <input type="text" name="telefone" value="@Model.Telefone" />
     <hr />
 
-    <button type="submit">Gravar</button>
+    <button class="botao-submit" type="submit">Gravar</button>
 </form>
