@@ -16,10 +16,10 @@
     </div>
 
     <div>
-        <a class="button-inicial" href="/">Pagina inicial</a>
-        <a class="button-inicial" href="/fabricantes/visualizar">Fabricantes</a>
-        <a class="button-inicial" href="/equipamentos/visualizar">Equipamentos</a>
-        <a class="button-inicial" href="/chamados/visualizar">Chamados</a>
+        <a class="button-inicial @(Context.Request.Path == "/" ? "ativo" : "")" href="/">Pagina inicial</a>
+        <a class="button-inicial @(Context.Request.Path.StartsWithSegments("/fabricantes/visualizar") ? "ativo" : "")" href="/fabricantes/visualizar">Fabricantes</a>
+        <a class="button-inicial @(Context.Request.Path.StartsWithSegments("/equipamentos/visualizar") ? "ativo" : "")" href="/equipamentos/visualizar">Equipamentos</a>
+        <a class="button-inicial @(Context.Request.Path.StartsWithSegments("/chamados/visualizar") ? "ativo" : "")" href="/chamados/visualizar">Chamados</a>
     </div>
 
     <hr>

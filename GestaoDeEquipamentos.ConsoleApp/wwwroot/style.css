@@ -1,8 +1,8 @@
 ﻿:root {
     --cor-neutra: #F5F5F5;
-    --cor-secundaria: forestgreen;
+    --cor-secundaria: #30c530;
     --cor-principal: #23231A;
-    --cor-excluir: #9D0D00;
+    --cor-excluir: #E01300;
 }
 
 body {
@@ -117,6 +117,7 @@ select {
     border: 2px solid var(--cor-principal);
     border-radius: 5px;
     padding: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
@@ -156,10 +157,16 @@ select {
 
     .botao-submit:hover {
         background-color: var(--cor-principal);
-        color: forestgreen;
+        color: var(--cor-secundaria);
         font-weight: bolder;
         transition: 0.45s;
     }
+
+.button-inicial.ativo {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    font-weight: bold;
+}
 
 .card-visualizar {
     display: inline-flex;
