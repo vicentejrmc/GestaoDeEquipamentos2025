@@ -20,12 +20,9 @@
 
     <label for="EquipamentoId">Equipamento do Chamado:</label>
     <br />
-    <select name="EquipamentoId" id="EquipamentoId">
-        @foreach (var equipamento in Model.EquipamentosDisponiveis)
-        {
-            <option value="@equipamento.Id" @(equipamento.Id == Model.EquipamentoId ? "selected" : "")>@equipamento.Nome</option>
-        }
-    </select>
+    <input type="hidden" name="EquipamentoId" value="@Model.EquipamentoId" />
+    <input type="text" value="@Model.EquipamentosDisponiveis.FirstOrDefault(e => e.Id == Model.EquipamentoId)?.Nome" readonly style="background-color: #f5f5f5;" />
+    <br>
     <br>
 
     <label for="Descricao">Descrição do Chamado:</label>
