@@ -14,8 +14,8 @@
     <a href="/equipamentos/cadastrar">Cadastrar Novo Equipamento</a>
     <a href="/equipamentos/visualizar">Visualizar Equipamento</a>
 </div>
-<h3>Exclusão de Equipamento</h3>
-<p>Você tem certeza que deseja excluir o registro "@Model.Nome"?</p>
+
+<p class="p-excluir">Você tem certeza que deseja excluir o registro "@Model.Nome"?</p>
 <form action="/equipamentos/excluir/@Model.Id" method="post">
     <hr>
     <button class="botao-submit" style="background-color: var(--cor-excluir);" type="submit">Confirmar</button>

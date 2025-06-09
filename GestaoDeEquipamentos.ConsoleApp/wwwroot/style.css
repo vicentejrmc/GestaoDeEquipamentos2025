@@ -130,6 +130,10 @@ select {
     justify-content: center;
 }
 
+.p-excluir{
+   margin-top: 55px;
+}
+
 .botoes {
     display: inline-flex;
     width: 250px;

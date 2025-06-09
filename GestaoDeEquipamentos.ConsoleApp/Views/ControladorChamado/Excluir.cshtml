@@ -13,7 +13,7 @@
     <a href="/chamados/visualizar">Visualizar Chamados</a>
 </div>
 
-<p>Você confirma que o chamado "@Model.Titulo" foi conluído e pode ser Finalizado/Excluido?</p>
+<p class="p-excluir" >Você confirma que o chamado "@Model.Titulo" foi conluído e pode ser Finalizado/Excluido?</p>
 
 <form action="/chamados/excluir/@Model.Id" method="post">
     <button class="botao-submit" style="background-color: var(--cor-excluir);" type="submit">Confirmar</button>
